@@ -1,26 +1,45 @@
 name := "template"
-
 organization := "nl.papendorp"
-
 version := "0.1-SNAPSHOT"
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.13.1"
 
-lazy val akkaVersion = "2.5.2"
-lazy val scalaTestVersion = "3.0.1"
+lazy val akkaVersion = "2.6.0"
+lazy val scalazVersion = "7.2.29"
+lazy val scalafxVersion = "12.0.2-R18"
+lazy val slf4jVersion = "2.12.1"
 
-libraryDependencies ++= Seq(
-	"com.typesafe.akka" %% "akka-actor" % akkaVersion,
+lazy val scalaTestVersion = "3.1.0-RC3"
+lazy val scalaTestPlusVersion = "3.1.0.0-RC2"
+lazy val scalaCheckVersion = "1.14.1"
+lazy val scalaMockVersion = "4.4.0"
 
-	"org.scalatest" %% "scalatest" % scalaTestVersion % Test,
-	"com.typesafe.akka" %% "akka-testkit" % akkaVersion % Test,
-	//http://scalamock.org/quick-start/
-	"org.scalamock" %% "scalamock-scalatest-support" % "3.5.0" % Test,
+unmanagedClasspath in Runtime += baseDirectory.value / "resources"
 
-	"info.cukes" %% "cucumber-scala" % "1.2.5" % Test,
-	"info.cukes" % "cucumber-junit" % "1.2.5" % Test
+scalacOptions ++= Seq(
+	"-Ymacro-annotations",
+	"-deprecation",
+	"-unchecked",
+	"-feature"
 )
 
-enablePlugins( CucumberPlugin )
+libraryDependencies ++= Seq(
+	"com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
+	"com.typesafe.akka" %% "akka-stream" % akkaVersion,
 
-CucumberPlugin.glue := "com/waioeka/sbt/"
+	"org.scalafx" %% "scalafx" % scalafxVersion,
+	"org.scalafx" %% "scalafxml-core-sfx8" % "0.5",
+
+	"org.scalaz" %% "scalaz-core" % scalazVersion,
+	"org.apache.logging.log4j" % "log4j-slf4j-impl" % slf4jVersion,
+
+	"org.scalatest" %% "scalatest" % scalaTestVersion % Test,
+	"org.scalatestplus" %% "scalatestplus-scalacheck" % scalaTestPlusVersion % Test,
+	"org.scalacheck" %% "scalacheck" % scalaCheckVersion % Test,
+
+	"com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion % Test,
+	"com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % Test,
+
+	//http://scalamock.org/quick-start/
+	"org.scalamock" %% "scalamock" % scalaMockVersion % Test
+)
