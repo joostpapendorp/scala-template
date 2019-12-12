@@ -14,13 +14,13 @@ lazy val scalaTestPlusVersion = "3.1.0.0-RC2"
 lazy val scalaCheckVersion = "1.14.1"
 lazy val scalaMockVersion = "4.4.0"
 
-unmanagedClasspath in Runtime += baseDirectory.value / "resources"
+unmanagedClasspath in Runtime += baseDirectory.value / "src" / "main" / "resources"
 
 scalacOptions ++= Seq(
 	"-Ymacro-annotations",
 	"-deprecation",
 	"-unchecked",
-	"-feature"
+	"-feature",
 )
 
 libraryDependencies ++= Seq(
