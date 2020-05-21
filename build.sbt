@@ -2,15 +2,15 @@ name := "template"
 organization := "nl.papendorp"
 version := "0.1-SNAPSHOT"
 
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.2"
 
-lazy val akkaVersion = "2.6.0"
-lazy val scalazVersion = "7.2.29"
-lazy val scalafxVersion = "12.0.2-R18"
+lazy val akkaVersion = "2.6.5"
+lazy val catsVersion = "2.1.0-RC1"
+lazy val scalafxVersion = "14-R19"
 lazy val slf4jVersion = "2.12.1"
 
-lazy val scalaTestVersion = "3.1.0-RC3"
-lazy val scalaTestPlusVersion = "3.1.0.0-RC2"
+lazy val scalaTestVersion = "3.1.2"
+lazy val scalaTestPlusVersion = "3.2.0.1-M2x"
 lazy val scalaCheckVersion = "1.14.1"
 lazy val scalaMockVersion = "4.4.0"
 
@@ -20,7 +20,7 @@ scalacOptions ++= Seq(
 	"-Ymacro-annotations",
 	"-deprecation",
 	"-unchecked",
-	"-feature",
+	"-feature"
 )
 
 libraryDependencies ++= Seq(
@@ -30,11 +30,11 @@ libraryDependencies ++= Seq(
 	"org.scalafx" %% "scalafx" % scalafxVersion,
 	"org.scalafx" %% "scalafxml-core-sfx8" % "0.5",
 
-	"org.scalaz" %% "scalaz-core" % scalazVersion,
+	"org.typelevel" %% "cats-core" % catsVersion,
 	"org.apache.logging.log4j" % "log4j-slf4j-impl" % slf4jVersion,
 
 	"org.scalatest" %% "scalatest" % scalaTestVersion % Test,
-	"org.scalatestplus" %% "scalatestplus-scalacheck" % scalaTestPlusVersion % Test,
+	"org.scalatestplus" %% "scalacheck-1-14" % scalaTestPlusVersion % Test,
 	"org.scalacheck" %% "scalacheck" % scalaCheckVersion % Test,
 
 	"com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion % Test,
