@@ -17,6 +17,7 @@ etc/scrap/
 *.ipr
 *.iws
 .idea/
+*idea*
 
 ### Eclipse ###
 *.pydevproject
