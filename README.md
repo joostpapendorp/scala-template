@@ -8,7 +8,7 @@ This project is a template for Scala projects. Replace this readme with informat
 See the [guide](docs/getting-started.md)
 
 ### Contribution guidelines
-[...]
+These can be found [here](docs/contribution-guidelines.md). Please read carefully before committing.
 
 ### Download and installation
 [...]
