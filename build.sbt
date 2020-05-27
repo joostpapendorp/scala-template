@@ -10,7 +10,7 @@ lazy val scalafxVersion = "14-R19"
 lazy val slf4jVersion = "2.12.1"
 
 lazy val scalaTestVersion = "3.1.2"
-lazy val scalaTestPlusVersion = "3.2.0.1-M2x"
+lazy val scalaTestPlusVersion = "3.2.0.1-M2"
 lazy val scalaCheckVersion = "1.14.1"
 lazy val scalaMockVersion = "4.4.0"
 
