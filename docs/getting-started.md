@@ -47,5 +47,5 @@ Presently, no testing environment exists.
 the following tools are useful in developing and maintaining the backend:  
 - [OWASP dependency checker](https://owasp.org/www-project-dependency-check/). To check our dependencies for vulnerabilities, run `mvn verify > docs/temp/OWASP.txt`. 
 Run it twice to get rid of the extraneous download logging.
+- [ADR-log](docs/adr/index.md#tooling). Run the command `adr-log -i` inside `/docs/adr/` to update the index. 
 - [...] 
-
