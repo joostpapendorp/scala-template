@@ -5,7 +5,7 @@
 This project is a template for Scala projects. Replace this readme with information relevant to your app.
 
 ### Getting started
-[...]
+See the [guide](docs/getting-started.md)
 
 ### Contribution guidelines
 [...]
