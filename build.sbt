@@ -17,7 +17,9 @@ lazy val scalaMockVersion = "4.4.0"
 unmanagedClasspath in Runtime += baseDirectory.value / "src" / "main" / "resources"
 
 scalacOptions ++= Seq(
+	"-Xfatal-warnings",
 	"-Ymacro-annotations",
+	"-language:higherKinds",
 	"-deprecation",
 	"-unchecked",
 	"-feature"
